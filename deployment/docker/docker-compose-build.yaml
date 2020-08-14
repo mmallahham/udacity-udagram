@@ -6,13 +6,13 @@ services:
     image: mmallahham/reverseproxy 
   backend_user:
     build:
-      context: ../../restapi-user
+      context: ../../udagram-user
     image: mmallahham/udagram-user
   backend_feed:
     build:
-      context: ../../restapi-feed  
+      context: ../../udagram-feed  
     image: mmallahham/udagram-feed
   frontend:
     build:
-      context: ../../frontend  
+      context: ../../udagram-frontend  
     image: mmallahham/udagram-frontend
