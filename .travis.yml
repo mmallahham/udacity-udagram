@@ -14,8 +14,14 @@ before_install:
   - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
   - chmod +x ./kubectl
   - sudo mv ./kubectl /usr/local/bin/kubectl
+  - kubectl version --short --client
 
 install: 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker-compose -f deployment/docker/docker-compose-build.yaml build --parallel
   - docker-compose -f deployment/docker/docker-compose-build.yaml push 
+
+  - kubectl apply -f deployment/k8s/env-configmap.yaml
+  - kubectl apply -f deployment/k8s/env-secret.yaml
+  - kubectl apply -f deployment/k8s/backend-feed-deployment.yaml
+  - kubectl apply -f deployment/k8s/backend-feed-service.yaml
