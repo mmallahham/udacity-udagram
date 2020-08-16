@@ -16,6 +16,9 @@ before_install:
   - sudo mv ./kubectl /usr/local/bin/kubectl
   - kubectl version --short --client
   - sudo apt-get install gettext-base
+  - mkdir -p $HOME/.kube
+  - sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  - sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 install: 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
