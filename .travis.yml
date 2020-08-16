@@ -27,6 +27,9 @@ before_install:
   - mkdir -p $HOME/.aws
   - echo "$AWS_CONFIG" | base64 --decode > ${HOME}/.aws/config
   - echo "$AWS_CREDENTIALS" | base64 --decode > ${HOME}/.aws/credentials
+  - sudo apt-get remove -y —purge awscli
+  - udo apt-get install -y python3 python3-pip
+  - sudo pip3 install awscli —upgrage
 
 install: 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
