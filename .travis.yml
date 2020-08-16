@@ -21,7 +21,7 @@ before_install:
   - echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
   - sudo apt-get install gettext-base
   - mkdir -p $HOME/.kube
-  - sudo echo $CONFIG > $HOME/.kube/config
+  - echo "$CONFIG" | base64 --decode > ${HOME}/.kube/config
   - sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 install: 
