@@ -15,7 +15,7 @@ spec:
         service: backend-feed
     spec:
       containers:
-      - image: scheele/udacity-restapi-feed
+      - image: mmallahham/udagram-feed
         name: backend-feed
         imagePullPolicy: Always  
         resources:
