@@ -17,6 +17,8 @@ spec:
       containers:
       - image: mmallahham/udagram-feed
         name: backend-feed
+        ports:
+          - containerPort: 80
         imagePullPolicy: Always  
         resources:
           requests:
