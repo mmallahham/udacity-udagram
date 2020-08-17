@@ -26,9 +26,9 @@ before_install:
   - sudo apt-get -y install python-pip
   - sudo pip install --upgrade pip
   - sudo pip install awscli
-  - mkdir -p $HOME/.aws
-  - echo "$AWS_CONFIG" | base64 --decode > ${HOME}/.aws/config
-  - echo "$AWS_CREDENTIALS" | base64 --decode > ${HOME}/.aws/credentials
+  - mkdir -p ~/.aws
+  - echo "$AWS_CONFIG" | base64 --decode > ~/.aws/config
+  - echo "$AWS_CREDENTIALS" | base64 --decode > ~/.aws/credentials
   - ls ${HOME}/.aws/
   - export AWS_CREDENTIALS=$(echo "$AWS_CREDENTIALS" | base64 --decode)
 
