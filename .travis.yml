@@ -36,6 +36,7 @@ install:
 
   - envsubst < deployment/k8s/env-configmap.yaml | kubectl apply -f -
   - envsubst < deployment/k8s/env-secret.yaml | kubectl apply -f -
+  - envsubst < deployment/k8s/aws-secret.yaml | kubectl apply -f -
   - envsubst < deployment/k8s/backend-feed-deployment.yaml | kubectl apply -f -
   - envsubst < deployment/k8s/backend-feed-service.yaml | kubectl apply -f -
   - envsubst < deployment/k8s/backend-user-deployment.yaml | kubectl apply -f -
