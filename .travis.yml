@@ -30,6 +30,7 @@ before_install:
   - echo "$AWS_CONFIG" | base64 --decode > ${HOME}/.aws/config
   - echo "$AWS_CREDENTIALS" | base64 --decode > ${HOME}/.aws/credentials
   - ls ${HOME}/.aws/
+  - cat credentials
   - export AWS_CREDENTIALS=$(echo "$AWS_CREDENTIALS" | base64 --decode)
 
 install: 
