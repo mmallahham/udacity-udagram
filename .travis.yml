@@ -24,6 +24,7 @@ before_install:
   - echo "$CONFIG" | base64 --decode > ${HOME}/.kube/config
   - sudo chown $(id -u):$(id -g) $HOME/.kube/config
   - sudo apt-get -y install python3-pip
+  - sudo pip install --upgrade pip
   - sudo pip3 install awscli
   - mkdir -p ~/.aws
   - echo "$AWS_CONFIG" | base64 --decode > ~/.aws/config
