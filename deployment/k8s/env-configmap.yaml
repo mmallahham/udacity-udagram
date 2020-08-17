@@ -7,7 +7,7 @@ data:
   JWT_SECRET: $JWT_SECRET
   POSTGRESS_DB: $POSTGRES_DB
   POSTGRESS_HOST: $POSTGRES_HOST
-  URL: http://localhost:8100  
+  URL: http://localhost:8080  
 metadata:
   name: env-config
   
