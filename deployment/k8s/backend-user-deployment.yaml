@@ -29,35 +29,22 @@ spec:
             cpu: "500m"      
         env:
         - name: URL
-          valueFrom:
-            configMapKeyRef:
-              name: env-config
-              key: URL 
+          value: $URL 
         - name: JWT_SECRET
-          valueFrom:
-            configMapKeyRef:
-              name: env-config
-              key: JWT_SECRET
+          value: $JWT_SECRET
         - name: POSTGRES_DB
-          valueFrom:
-            configMapKeyRef:
-              name: env-config
-              key: POSTGRESS_DB
+          value: $POSTGRES_DB
         - name: POSTGRES_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: env-config
-              key: POSTGRESS_HOST
+          value: $POSTGRES_HOST
         - name: POSTGRES_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: env-secret
-              key: POSTGRESS_PASSWORD
+          value: $POSTGRES_PASSWORD
         - name: POSTGRES_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: env-secret
-              key: POSTGRESS_USERNAME
+          value: $POSTGRES_USERNAME
+        - name: AWS_SECRET_ACCESS_KEY
+          value: $AWS_SECRET_ACCESS_KEY    
+        - name: AWS_ACCESS_KEY_ID
+          value: $AWS_ACCESS_KEY_ID    
       restartPolicy: Always
+      
 
 
