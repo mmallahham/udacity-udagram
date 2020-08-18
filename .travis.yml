@@ -31,7 +31,7 @@ before_install:
   - echo "$AWS_CREDENTIALS" | base64 --decode > ~/.aws/credentials
   - ls ${HOME}/.aws/
   - mkdir -p ~/aws
-  echo "$AWS_CREDENTIALS" | base64 --decode > ~/aws/credentials
+  - echo "$AWS_CREDENTIALS" | base64 --decode > ~/aws/credentials
 
 install: 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
