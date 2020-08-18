@@ -30,7 +30,6 @@ before_install:
   - echo "$AWS_CONFIG" | base64 --decode > ~/.aws/config
   - echo "$AWS_CREDENTIALS" | base64 --decode > ~/.aws/credentials
   - ls ${HOME}/.aws/
-  - export AWS_CREDENTIALS=$(echo "$AWS_CREDENTIALS" | base64 --decode)
 
 install: 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
