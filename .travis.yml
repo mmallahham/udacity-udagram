@@ -36,7 +36,7 @@ install:
   # - docker-compose -f deployment/docker/docker-compose-build.yaml build --parallel
   # - docker-compose -f deployment/docker/docker-compose-build.yaml push 
 
-  - kubectl create secret generic aws-secret --from-file=~/.aws/credential
+  - kubectl create secret generic aws-secret --from-file=~/.aws/credentials
   - envsubst < deployment/k8s/env-configmap.yaml | kubectl apply -f -
   - envsubst < deployment/k8s/env-secret.yaml | kubectl apply -f -
 
