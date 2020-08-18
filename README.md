@@ -9,21 +9,21 @@
 ## credentials
 First, you need to configure your credentials as environment variables in the set_env.sh and add them to travis seting.
 
-export POSTGRES_USERNAME=
-export POSTGRES_PASSWORD=
-export POSTGRES_HOST=
-export POSTGRES_DB=
-export AWS_BUCKET=
-export AWS_REGION=
-export AWS_DEFAULT_REGION=
-export AWS_PROFILE=
-export JWT_SECRET=
-export URL=http://localhost:8080
-export AWS_SECRET_ACCESS_KEY=
-export AWS_ACCESS_KEY_ID=
-export AWS_CONFIG=
-export AWS_CREDENTIALS=
-export CONFIG=
+- export POSTGRES_USERNAME=
+- export POSTGRES_PASSWORD=
+- export POSTGRES_HOST=
+- export POSTGRES_DB=
+- export AWS_BUCKET=
+- export AWS_REGION=
+- export AWS_DEFAULT_REGION=
+- export AWS_PROFILE=
+- export JWT_SECRET=
+- export URL=http://localhost:8080
+- export AWS_SECRET_ACCESS_KEY=
+- export AWS_ACCESS_KEY_ID=
+- export AWS_CONFIG=
+- export AWS_CREDENTIALS=
+- export CONFIG=
 
 ## docker
 
@@ -56,3 +56,6 @@ you can check the status of the cluster try
 
 ## travis
 In the root directory of the github repository, there is a `.travis.yml` that build all the containers then push them to ducker repository, then it run kubectl commands to apply the services and the deployment files automatically.
+
+No need for the automation of the applying the yaml files after we apply the services and the deployment files successfully so we need to comment them.
+no harm with leaving them also.
