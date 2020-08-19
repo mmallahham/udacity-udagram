@@ -21,9 +21,15 @@ First, you need to configure your credentials as environment variables in the se
 - export URL=http://localhost:8080
 - export AWS_SECRET_ACCESS_KEY=
 - export AWS_ACCESS_KEY_ID=
-- export AWS_CONFIG=
-- export AWS_CREDENTIALS=
-- export CONFIG=
+- export AWS_CONFIG=Base64 encoded AWS config file (~/.aws/config)
+- export AWS_CREDENTIALS=Base64 encoded AWS credentials file (~/.aws/credentials)
+- export CONFIG=Base64 encoded Kubernetes config file (~/.kube/config)
+
+For example: to get the encoded value for the Kubernetes config file use this command to generate it and copy it  
+
+- cat ${HOME}/.kube/config | base64 | pbcopy
+
+
 
 ## docker
 
@@ -38,7 +44,7 @@ Also the images were saved on docker hub:
 
 
 ## kubernetes
-To get kubernetes cluster working, first you need to configure the cluster on AWS, I used AWS EKS, then, you need to run the next command:
+To get kubernetes cluster working, first you need to configure the cluster on AWS, you can do that from the consol or by using the next command:
 - aws eks --region <YOUR_REGION> update-kubeconfig --name <CLUSTER_NAME>
 - kubectl get nodes
 
