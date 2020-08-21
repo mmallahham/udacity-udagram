@@ -15,9 +15,16 @@ spec:
         service: backend-feed
     spec:
       containers:
-      - image: mmallahham/udagram-feed
+      - image: mmallahham/udagram-feed:latest
         name: backend-feed
-        imagePullPolicy: Always               
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"              
         env:
         - name: URL
           value: $URL

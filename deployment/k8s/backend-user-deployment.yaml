@@ -15,11 +15,9 @@ spec:
         service: backend-user
     spec:
       containers:
-      - image: mmallahham/udagram-user
+      - image: mmallahham/udagram-user:latest
         name: backend-user 
         imagePullPolicy: Always
-        ports:
-          - containerPort: 80  
         resources:
           requests:
             memory: "64Mi"

@@ -16,11 +16,11 @@ spec:
         api: external        
     spec:
       containers:
-      - image: mmallahham/udagram-frontend
+      - image: mmallahham/udagram-frontend:latest
         name: frontend
-        imagePullPolicy: Always          
+        imagePullPolicy: Always   
         ports:
-        - containerPort: 80
+          - containerPort: 80         
         resources:
           requests:
             memory: "64Mi"
