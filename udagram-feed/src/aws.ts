@@ -4,7 +4,11 @@ import {config} from './config/config';
 
 // Configure AWS
 const credentials = new AWS.SharedIniFileCredentials({profile: 'default'});
+credentials.accessKeyId = process.env.AWS_ACCESS_KEY_ID
+credentials.accessKeyId = process.env.AWS_SECRET_ACCESS_KEY
 AWS.config.credentials = credentials;
+
+
 
 export const s3 = new AWS.S3({
   signatureVersion: 'v4',
@@ -12,7 +16,7 @@ export const s3 = new AWS.S3({
   params: {Bucket: config.aws_media_bucket},
 });
 
-console.log(process.env.AWS_ACCESS_KEY_ID)
+console.log(credentials)
 
 // Generates an AWS signed URL for retrieving objects
 export function getGetSignedUrl( key: string ): string {
