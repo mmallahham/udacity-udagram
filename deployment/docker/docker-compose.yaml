@@ -11,7 +11,7 @@ services:
   backend-user:
     image: mmallahham/udagram-user
     ports:
-      - "8080:8080"
+      - 80:8080
     environment:
       POSTGRESS_USERNAME: $POSTGRESS_USERNAME
       POSTGRESS_PASSWORD: $POSTGRESS_PASSWORD 
@@ -21,11 +21,11 @@ services:
       AWS_PROFILE: $AWS_PROFILE 
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
-      URL: "http://localhost:8080"
+      URL: $URL
   backend-feed:
     image: mmallahham/udagram-feed
     ports:
-      - "8080:8080"
+      - 80:8080
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -37,8 +37,8 @@ services:
       AWS_PROFILE: $AWS_PROFILE 
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
-      URL: "http://localhost:8080"
+      URL: $URL
   frontend:
     image: mmallahham/udagram-frontend
     ports:
-      - "8080:80"
+      - 80:80
